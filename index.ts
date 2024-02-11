@@ -1,3 +1,4 @@
+#! /usr/bin/env bun
 import { Readable } from "node:stream";
 
 if (import.meta.main) stdout2webstream();
