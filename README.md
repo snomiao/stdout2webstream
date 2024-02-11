@@ -31,7 +31,14 @@ tail -f out.log | docker run -p 9123:80 -i ghcr.io/snomiao/stdout2webstream
 open http://localhost:8080/
 ```
 
-## 2. Read the log in js
 
 <!-- check this in browser -->
 <!-- (await fetch('https://stdout2webstream.snomiao.dev/')).body.pipe(new WritableStream({write: console.log})) -->
+
+<!--
+# docker rm -f stdout2webstream
+# docker run -it -v ${PWD}/index.ts:/app/index.ts --rm --name stdout2webstream --network snocode_default ghcr.io/snomiao/stdout2webstream bun --hot index.ts -->
+
+## Reference
+
+- bun serve https://bun.sh/docs/api/http
