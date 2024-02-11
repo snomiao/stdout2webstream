@@ -1,0 +1,15 @@
+networks:
+  snocode_default:
+    external: true
+services:
+  stdout2webstream:
+    image: ghcr.io/snomiao/stdout2webstream
+    build: .
+    networks:
+      - snocode_default
+    command: bun --hot index.ts
+    volumes:
+      - ${PWD}/logs:/logs
+      - ${PWD}/index.ts:/app/index.ts
+
+# await (await fetch('https://stdout2webstream.snomiao.dev/')).body.pipe(new WritabeStream({write: console.log}))
